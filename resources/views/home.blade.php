@@ -70,9 +70,10 @@
 </head>
 <body class="bg-[#0a101d] text-slate-200 overflow-x-hidden selection:bg-[#ffec1f]/20 selection:text-[#ffec1f]">
 
+  @include('components.splashscreen')
   {{-- ===================== BACKGROUND & ORBS ===================== --}}
   <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center">
-      <img src="{{ asset('Asset/background.png') }}" alt="Background ISFEST" class="absolute inset-0 w-full h-full object-cover object-center opacity-70" />
+      <img src="{{ asset('background.png') }}" alt="Background ISFEST" class="absolute inset-0 w-full h-full object-cover object-center opacity-70" />
       <div class="absolute inset-0 bg-[#0a101d]/60 backdrop-blur-[2px]"></div>
       
       <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-[#ffec1f]/10 rounded-full blur-[80px] glow-orb mix-blend-screen"></div>
@@ -90,10 +91,6 @@
         {{-- Teks Kiri --}}
         <div class="flex-1 text-center lg:text-left space-y-7 relative">
 
-          {{-- Badge (Blipping light dihapus) --}}
-          <div class="fade-up d1 inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[#ffec1f]/25 text-[#ffec1f] text-[10px] md:text-xs font-bold tracking-widest uppercase">
-            Information Systems Festival · UMN 2026
-          </div>
 
           {{-- Headline --}}
           <h1 class="fade-up d2 text-5xl sm:text-6xl lg:text-7xl font-cinzel font-black leading-[1.1] text-white drop-shadow-lg">
