@@ -78,8 +78,25 @@
           @include('components.mascot')
       </div>
 
+<<<<<<< HEAD
+=======
+      {{-- Tema Resmi --}}
+      <div class="mt-8 px-4 relative z-10">
+          <h2 class="font-amarante text-2xl sm:text-3xl md:text-4xl text-[#ffec1f] tracking-wide drop-shadow-md leading-relaxed">
+            "The Grand Wizarding Conquest:<br class="sm:hidden" /> Rise Beyond All Limits"
+          </h2>
+      </div>
+
     </div>
 
+    {{-- Scroll hint --}}
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-slate-500 animate-bounce">
+      <span class="text-[10px] tracking-widest uppercase font-semibold">Scroll</span>
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+>>>>>>> 0ce73f1 (Navbar)
+    </div>
   </section>
 
   {{-- FOOTER --}}
