@@ -20,24 +20,12 @@
 
     .ppt-text-style {
       color: #ffd700; 
-      -webkit-text-stroke: 2.5px #4a1c0d; 
       text-shadow: 4px 6px 4px rgba(0, 0, 0, 0.7); 
-    }
-
-    @keyframes text-glow {
-      0%, 100% { filter: drop-shadow(0 0 5px rgba(255,236,31,0.2)); }
-      50% { filter: drop-shadow(0 0 20px rgba(255,236,31,0.5)); }
     }
 
     @keyframes text-reveal {
       0% { opacity: 0; transform: scale(0.9); filter: blur(10px); }
       100% { opacity: 1; transform: scale(1); filter: blur(0px); }
-    }
-
-    @keyframes companion-pop {
-      0% { transform: scale(0) rotate(-15deg) translateY(50px); opacity: 0; }
-      70% { transform: scale(1.15) rotate(5deg) translateY(-10px); opacity: 1; }
-      100% { transform: scale(1) rotate(0deg) translateY(0); opacity: 1; }
     }
 
     @keyframes bg-focus {
@@ -47,13 +35,6 @@
 
     .animate-reveal { animation: text-reveal 2s ease-out 0.5s forwards; opacity: 0; }
     .animate-bg-focus { animation: bg-focus 4s ease-out forwards; }
-    .animate-glow { animation: text-glow 3s ease-in-out infinite; }
-    
-    .animate-companion {
-      animation: companion-pop 1s cubic-bezier(0.34, 1.56, 0.64, 1) 2.2s forwards;
-      opacity: 0;
-      transform-origin: bottom center;
-    }
 
     .glass-nav {
       background: rgba(10, 16, 29, 0.3);
@@ -84,35 +65,19 @@
   </div>
 
   {{-- HERO SECTION --}}
-  <section class="relative z-30 min-h-[calc(100vh-5rem)] flex items-center justify-center text-center px-6 py-12 lg:py-0 overflow-hidden">
+  <section class="relative z-30 min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center text-center px-6 overflow-hidden">
     
-    <div class="max-w-5xl mx-auto w-full animate-reveal flex flex-col items-center">
+    <div class="max-w-5xl mx-auto w-full flex flex-col items-center justify-center animate-reveal">
       
-      {{-- Judul Utama --}}
-      <div class="flex flex-col items-center justify-center animate-glow">
-          <h1 class="font-amarante text-5xl sm:text-7xl md:text-8xl font-normal leading-tight tracking-wide ppt-text-style">
-            Information System<br />
-            Festival
-          </h1>
+      {{-- Maskot Utama (Di tengah layar) --}}
+      {{-- PENYESUAIAN: Menambahkan mt-24 (margin-top besar) agar turun dan bubble tidak tertutup navbar --}}
+      <div class="w-48 sm:w-64 md:w-80 lg:w-96 relative z-50 mt-20 md:mt-28">
           
-          <span class="font-amarante text-4xl sm:text-5xl md:text-6xl mt-2 tracking-widest text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
-            2026
-          </span>
+          <div class="absolute inset-0 bg-gradient-to-tr from-[#ffec1f]/10 to-transparent rounded-full blur-[60px] pointer-events-none"></div>
+          
+          @include('components.mascot')
       </div>
 
-      {{-- Tema Resmi --}}
-      <div class="mt-8 px-4 relative z-10">
-          <h2 class="font-amarante text-2xl sm:text-3xl md:text-4xl text-[#ffec1f] tracking-wide drop-shadow-md leading-relaxed">
-            "The Grand Wizarding Conquest:<br class="sm:hidden" /> Rise Beyond All Limits"
-          </h2>
-      </div>
-
-    </div>
-
-    {{-- Maskot Pendamping (Companion) --}}
-    {{-- PERBAIKAN: Posisi diturunkan (bottom-2/bottom-4) dan ukurannya lebih proporsional --}}
-    <div class="absolute bottom-2 right-2 md:bottom-4 md:right-8 w-28 sm:w-32 md:w-40 lg:w-48 animate-companion z-50">
-        @include('components.mascot')
     </div>
 
   </section>
