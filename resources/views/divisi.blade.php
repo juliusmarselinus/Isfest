@@ -221,6 +221,7 @@ $sovereign   = $divisi[0];
 $otherDivisi = array_slice($divisi, 1);
 @endphp
 
+<<<<<<< HEAD
 {{-- ===== SOVEREIGN SINGLE CARD ===== --}}
 <div class="max-w-6xl mx-auto px-6 pt-10">
 
@@ -289,6 +290,54 @@ $otherDivisi = array_slice($divisi, 1);
   </div>
 
 </div>
+
+{{-- ===== SOVEREIGN HERO SECTION ===== --}}
+<div
+  class="relative w-full overflow-hidden cursor-pointer"
+  style="background:linear-gradient(135deg,#0e1929 0%,#172236 50%,#1a2a1a 100%);min-height:380px;"
+  onclick="openModal(0)"
+>
+  {{-- dekor asset kiri --}}
+  <img src="/assets/leaves.png" class="absolute left-0 bottom-0 w-48 opacity-20 float-anim pointer-events-none" />
+  <img src="/assets/witch-hat.png" class="absolute left-10 top-8 w-16 opacity-30 float-anim pointer-events-none" style="animation-delay:.5s" />
+
+  {{-- dekor asset kanan --}}
+  <img src="/assets/Wand.png" class="absolute right-8 top-10 w-14 opacity-25 float-anim-r pointer-events-none" style="animation-delay:1s" />
+  <img src="/mascot/mascot-side.png" class="absolute right-0 bottom-0 h-64 opacity-80 float-anim pointer-events-none" style="animation-delay:.3s" />
+  <img src="/assets/magic-clumps.png" class="absolute right-48 top-6 w-20 opacity-20 float-anim pointer-events-none" />
+
+  {{-- glow center --}}
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at center,rgba(255,236,31,.06) 0%,transparent 70%);"></div>
+
+  {{-- konten --}}
+  <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 py-16">
+    <p class="text-xs uppercase tracking-[.3em] text-[#ffec1f]/60 mb-4">ISFEST 2026</p>
+
+    <img
+      src="/logo%20Divisi/Sovereign.png"
+      class="w-28 h-28 object-contain mb-5 drop-shadow-lg"
+      style="filter:drop-shadow(0 0 20px rgba(255,236,31,.3));"
+    />
+
+    <h1 class="text-5xl font-black text-white mb-1">Sovereign</h1>
+    <p class="text-[#ffec1f] font-bold tracking-widest text-sm uppercase mb-4">Badan Pengurus Harian</p>
+
+    <div class="flex flex-wrap justify-center gap-3 mb-6">
+      @foreach($sovereign['members'] as $m)
+      <div class="px-4 py-2 rounded-xl border border-[#ffec1f]/20 bg-[#ffec1f]/5 text-center">
+        <p class="text-white font-bold text-sm">{{ $m['name'] }}</p>
+        <p class="text-[#ffec1f]/60 text-[10px] uppercase tracking-wider">{{ $m['role'] }}</p>
+      </div>
+      @endforeach
+    </div>
+
+    <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#ffec1f]/30 text-[#ffec1f] text-xs font-bold uppercase tracking-widest hover:bg-[#ffec1f]/10 transition">
+      Lihat Detail ↗
+    </span>
+  </div>
+</div>
+
+
 {{-- ===== DIVIDER ===== --}}
 <div class="max-w-6xl mx-auto px-6 pt-14 pb-4">
   <div class="flex items-center gap-4 mb-10">

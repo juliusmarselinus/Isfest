@@ -33,3 +33,7 @@ Route::get('/tentang', function () {
 Route::get('/divisi', function () {
     return view('divisi');
 })->name('divisi');
+
+Route::get('/divisi', function () {
+    return view('divisi');
+})->name('divisi');
