@@ -14,7 +14,7 @@ class PendaftaranController extends Controller
 {
     public function index()
     {
-        return view('login.daftar');
+        return view('auth.daftar');
     }
 
     public function store(Request $request)

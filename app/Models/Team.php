@@ -1,16 +1,19 @@
 <?php
 namespace App\Models;
 
+// Tambahkan baris ini:
+use Illuminate\Foundation\Auth\User as Authenticatable; 
+
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class Team extends Model
+// Ubah 'extends Model' menjadi 'extends Authenticatable'
+class Team extends Authenticatable 
 {
     use HasFactory, HasUuids;
 
     protected $fillable = [
-        'team_name',    // <-- Wajib ada agar tidak dibuang Laravel
+        'team_name',
         'jenis_lomba',
         'username',
         'password',
@@ -18,7 +21,16 @@ class Team extends Model
         'bukti_transfer_url',
     ];
 
-    // Relasi ke Anggota (Satu tim memiliki banyak anggota)
+    // Sembunyikan password saat data tim dipanggil
+    protected $hidden = [
+        'password',
+    ];
+
+    // Beritahu Laravel untuk hash password otomatis (jika pakai Laravel 10/11)
+    protected $casts = [
+        'password' => 'hashed',
+    ];
+
     public function members()
     {
         return $this->hasMany(TeamMember::class);
